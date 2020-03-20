@@ -81,4 +81,71 @@ git reset --mixed
 git reset --hard
 
 8.Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes .
+git add .
+git status
 
+Output:
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   Commands.txt
+
+
+git commit -m 'Second Commit'
+git status
+
+9.Display all the commits 
+
+git log --oneline
+
+Output:
+4863485 (HEAD -> master, origin/master, origin/HEAD) Second Commit
+f11d11a First real commit
+5a8d065 Commiting after some changes
+d0061f1 First Commit with empty Java files
+38380c7 Initial commit
+
+10.Display a specific commit 
+
+git show d0061f1
+
+Output: 
+commit d0061f17ef01080c7a192cddca66279ef50fa6d5
+Author: Harshit Singh <harshit@vinsol.com>
+Date:   Fri Mar 20 17:20:04 2020 +0530
+
+    First Commit with empty Java files
+
+11.Create branches called "feature1" and "feature2" from master. Delete branch "feature2"
+git branch
+* master
+git branch feature1
+git branch feature2
+git branch
+  feature1
+  feature2
+* master
+git branch -d feature2
+Deleted branch feature2 (was 4863485).
+git branch
+  feature1
+* master
+
+12. Make some commits on "feature1".
+
+git checkout feature1
+touch Third.java
+ls
+Commands.txt	First.java	README.md	Second.java	Third.java
+git add .
+git commit -m 'First commit on feature1'
+
+Output:
+[feature1 b5fcde9] First commit on feature1
+ 2 files changed, 53 insertions(+)
+ create mode 100644 Third.java
+
+13. Make some commits on branch "master"
