@@ -60,5 +60,25 @@ index 6eb9e53..24847fc 100644
 +.              .git            Commands.txt    README.md
 +..             .gitignore      First.java      Second.java
 
+git add .
+git commit -m 'First real commit'
+Output:
+[master f11d11a] First real commit
+ 4 files changed, 56 insertions(+), 12 deletions(-)
+ create mode 100644 .gitignore
 
+5.create changes and revert those changes using git when those changes are not added to staging are
+
+git reset --soft
+Output
+HEAD is now at f11d11a First real commit
+
+6.create changes and revert those changes after adding changes to staging area
+
+git reset --mixed
+
+7.create change and revert those changes after committing those changes .
+git reset --hard
+
+8.Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes .
 
