@@ -149,3 +149,48 @@ Output:
  create mode 100644 Third.java
 
 13. Make some commits on branch "master"
+
+git branch
+* feature1
+  master
+
+git stash
+Saved working directory and index state WIP on feature1: b5fcde9 First commit on feature1
+
+git checkout master
+git branch
+  feature1
+* master
+
+touch Fourth.java
+ls
+Commands.txt	First.java	Fourth.java	README.md	Second.java
+
+git add .
+git status
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   Fourth.java
+
+
+git commit -m 'Third Commit on Master'
+
+[master 57fc496] Third Commit on Master
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Fourth.java
+
+14.Merge branch "feature1" in "master"
+Git checkout master
+git merge feature1 -m 'Merging with feature1'
+
+Output:
+Merge made by the 'recursive' strategy.
+ Commands.txt | 67 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Third.java   |  0
+ 2 files changed, 67 insertions(+)
+ create mode 100644 Third.java
+
+15.Create branch "feature2" from master .
+Make some commits on "feature2".
+
