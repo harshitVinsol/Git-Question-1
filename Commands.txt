@@ -12,3 +12,15 @@ Unpacking objects: 100% (3/3), done.
 touch Commands.txt
 touch First.java
 touch Second.java
+git add .
+git commit -m 'First Commit with empty Java files'
+git push origin master
+Output:
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 607 bytes | 607.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/harshitVinsol/Git-Question-1.git
+   38380c7..d0061f1  master -> master
