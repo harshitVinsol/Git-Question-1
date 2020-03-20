@@ -134,4 +134,18 @@ git branch
   feature1
 * master
 
-12 Make some commits on "feature1".
+12. Make some commits on "feature1".
+
+git checkout feature1
+touch Third.java
+ls
+Commands.txt	First.java	README.md	Second.java	Third.java
+git add .
+git commit -m 'First commit on feature1'
+
+Output:
+[feature1 b5fcde9] First commit on feature1
+ 2 files changed, 53 insertions(+)
+ create mode 100644 Third.java
+
+13. Make some commits on branch "master"
