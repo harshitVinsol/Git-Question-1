@@ -194,3 +194,74 @@ Merge made by the 'recursive' strategy.
 15.Create branch "feature2" from master .
 Make some commits on "feature2".
 
+git branch feature2
+git branch
+  feature1
+  feature2
+* master
+git checkout feature2
+git branch
+  feature1
+* feature2
+  master
+touch Fifth.java
+git add .
+git status
+
+On branch feature2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   Commands.txt
+	new file:   Fifth.java
+
+git commit -m 'First commit in feature2 branch'
+[feature2 e69bad3] First commit in feature2 branch
+ 2 files changed, 46 insertions(+)
+ create mode 100644 Fifth.java
+
+16.Make some commits on branch "master".
+
+git branch
+  feature1
+  feature2
+* master
+touch Sixth.java
+git add .
+Git commit -m 'Committing with Sixth.java'
+
+
+17.Rebase branch "master" in "feature2"
+git rebase feature2
+
+Output:
+First, rewinding head to replay your work on top of it...
+Fast-forwarded master to feature2. 
+
+git push origin master
+
+Output:
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (15/15), 2.81 KiB | 2.81 MiB/s, done.
+Total 15 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), done.
+To https://github.com/harshitVinsol/Git-Question-1.git
+   4863485..e69bad3  master -> master
+
+
+git log --oneline --graph
+
+* e69bad3 (HEAD -> feature2, origin/master, origin/feature2, origin/HEAD, master) First commit in feature2 branch
+*   65fe0e4 Merging with feature1
+|\  
+| * d189bf0 (origin/feature1, feature1) Commit on Master branch
+| * b5fcde9 First commit on feature1
+* | 57fc496 Third Commit on Master
+|/  
+* 4863485 Second Commit
+* f11d11a First real commit
+* 5a8d065 Commiting after some changes
+* d0061f1 First Commit with empty Java files
+* 38380c7 Initial commit
