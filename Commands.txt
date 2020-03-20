@@ -13,14 +13,52 @@ touch Commands.txt
 touch First.java
 touch Second.java
 git add .
-git commit -m 'First Commit with empty Java files'
-git push origin master
+
+3.Commit Changes
+git add .
+git commit -m 'Commiting after some changes'
 Output:
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (4/4), 607 bytes | 607.00 KiB/s, done.
-Total 4 (delta 0), reused 0 (delta 0)
-To https://github.com/harshitVinsol/Git-Question-1.git
-   38380c7..d0061f1  master -> master
+Commiting after some changes
+ 3 files changed, 14 insertions(+)
+
+4.try to remove and ignore some files . Use git diff before each commit.
+touch .gitignore
+ls -a
+.		.git		Commands.txt	README.md
+..		.gitignore	First.java	Second.java
+
+Updating .gitignore with
+.DS_Store
+.idea
+*.sublime-workspace
+*.png
+
+git diff master
+
+Output:
+iff --git a/Commands.txt b/Commands.txt
+index 6eb9e53..24847fc 100644
+--- a/Commands.txt
++++ b/Commands.txt
+@@ -13,14 +13,27 @@ touch Commands.txt
+ touch First.java
+ touch Second.java
+ git add .
+-git commit -m 'First Commit with empty Java files'
+-git push origin master
++
++3.Commit Changes
++git add .
++git commit -m 'Commiting after some changes'
++Output:
++Commiting after some changes
++ 3 files changed, 14 insertions(+)
++
++4.try to remove and ignore some files . Use git diff before each commit.
++touch .gitignore
++ls -a
++.              .git            Commands.txt    README.md
++..             .gitignore      First.java      Second.java
+
+
+
